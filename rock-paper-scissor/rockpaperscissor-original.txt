@@ -1,0 +1,31 @@
+let messageEl = document.getElementById("message-el")
+let itemsEl = document.getElementById("items-el")
+let items = ["👊", "🤚", "✌️",]
+
+messageEl.textContent = "Play Rock-Paper-Scissor with the computer!"
+
+function renderGame() {
+    let player1Item = getRandomItem()
+    let player2Item = getRandomItem()
+    itemsEl.textContent = player1Item + " vs " + player2Item 
+    logicRules(player1Item, player2Item)
+}
+
+function getRandomItem() {
+    let itemIndex = Math.floor(Math.random() * items.length)
+    return items[itemIndex]
+}
+
+function logicRules(player1Item, player2Item) {
+    if (player1Item === player2Item) {
+        messageEl.textContent = "it's a Tie!"
+    } else if (
+        (player1Item === "👊" && player2Item === "✌️") ||
+        (player1Item === "✌️" && player2Item === "🤚") ||
+        (player1Item === "🤚" && player2Item === "👊") 
+        ) {
+        messageEl.textContent = "You Win!"
+    } else {
+        messageEl.textContent = "You Lose!"
+    }
+}

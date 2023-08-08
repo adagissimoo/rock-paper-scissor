@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.button {
+    color: black;
+}
+
+.choice {
+    font-size: 28px;
+    padding: 5px 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
